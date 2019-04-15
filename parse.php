@@ -19,11 +19,17 @@ if(isset($_POST['srt'])) {
         $line=trim($line);
         if($line=="") {
             continue;
-        }
+        }        
         $index=(int) $_POST['index'];
         $words=explode(" ",$line);
+        $words=array_filter($words);
+        $words=array_values($words);
+        // print_r($words);
         if($index < 0) {
-            $index=count($words) - (-1*$index);
+            $index=count($words) - (-1*($index));
+        }
+        else if($index > 0) {
+            $index--;
         }
         $line=$words[$index];
         $output.=$line."\n";
