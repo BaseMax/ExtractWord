@@ -1,3 +1,3 @@
 # Extract Word
 
-Extract a word from the lines of the file.
+Extract a word(s) from the lines of the file.
